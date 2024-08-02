@@ -373,7 +373,7 @@ document.addEventListener("DOMContentLoaded", function() {
         } else if (index < part1.length + part2.length) {
             const part2Index = index - part1.length;
             if (part2Index === 0) {
-                container.innerHTML += '<span style="color: #ff004f;">';
+                container.innerHTML += '<span style="color: #ff004f;" id="part2">';
             }
             container.innerHTML += part2.charAt(part2Index);
             if (part2Index === part2.length - 1) {
@@ -403,20 +403,18 @@ document.addEventListener("DOMContentLoaded", function() {
     function backspaceText() {
         if (index > 0) {
             if (index <= part1.length) {
-                container.innerHTML = container.innerHTML.slice(0, -31); // Remove colored span tags
-            } else if (index <= part1.length + part2.length) {
-                if (index === part1.length + part2.length) {
-                    container.innerHTML = container.innerHTML.slice(0, -7); // Remove colored span end tag
-                }
                 container.innerHTML = container.innerHTML.slice(0, -1);
-                if (index === part1.length) {
-                    container.innerHTML = container.innerHTML.slice(0, -27); // Remove colored span start tag
+            } else if (index <= part1.length + part2.length) {
+                const part2Span = document.getElementById('part2');
+                part2Span.innerHTML = part2Span.innerHTML.slice(0, -1);
+                if (part2Span.innerHTML === '') {
+                    container.innerHTML = container.innerHTML.slice(0, -31); // Remove span tags
                 }
             } else if (index <= part1.length + part2.length + part3.length) {
                 if (part3.charAt(index - part1.length - part2.length - 1) === '\n') {
                     container.innerHTML = container.innerHTML.slice(0, -4); // Remove <br> tag
                 } else {
-                    container.innerHTML = container.innerHTML.slice(0, -31); // Remove colored span tags
+                    container.innerHTML = container.innerHTML.slice(0, -1);
                 }
             }
             index--;
