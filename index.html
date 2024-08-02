@@ -1,0 +1,287 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julius Pascual</title>
+    <link rel="icon" type="image/png" href="image/profile2.png">
+    <!--CSS-->
+    <link href="design.css" rel="stylesheet" type="text/css">
+    <!--JavaScript-->
+    <script src="function.js"></script>
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/2c1a4d6b34.js" crossorigin="anonymous"></script>
+<body>
+
+<!-- =================Home Section================= -->
+    <div id="header">
+        <div class="container">
+                <nav>
+                    <img src="image/logo.png" class="logo">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            <div class="header-text">
+                <p>&lt;Web Developer/&gt;</p>
+                <h1><span id="typing-container"></span><span id="cursor">|</span></h1>
+                <p>&lt;Programmer/&gt;</p>
+            </div>
+        </div>
+    </div>
+
+<!-- =================Modal Section================= -->
+    <div id="fileModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- Use iframe instead of object -->
+            <iframe id="fileIframe" src="" frameborder="0" width="100%" height="100%"></iframe>
+        </div>
+    </div>
+
+<!-- =================About Me Section================= -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="image/aboutme.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>&nbsp&nbspA Bachelor of Science in Information Technology graduate with a focus on web/app development, programming, and database management. Through my coursework and practical projects, I have built a strong foundation in these areas. I am eager to apply my skills in dynamic work environments, aiming to drive innovation and efficiency. Committed to continuous learning, I strive to make a meaningful impact and excel in every opportunity.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')"><i class="fas fa-code"></i> Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')"><i class="fas fa-history"></i> Experience</p>
+                        <p class="tab-links" onclick="opentab('education')"><i class="fas fa-graduation-cap"></i> Education</p>
+                        <p class="tab-links" onclick="opentab('certificates')"><i class="fa-solid fa-certificate"></i> Certificates</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Web Development Technologies</span><br>
+                            <ul style="margin-left: 10px;">
+                                <li>• Experienced in: HTML, CSS, PHP, JavaScript, API Integration</li>
+                                <li>• Familiar with: Laravel, Node.js, Bootstrap</li>
+                            </ul>
+                        </li>
+                        <li><span>Programming Languages</span><br>
+                            <ul style="margin-left: 10px;">
+                                <li>• Proficient in: C, Objective-C, Python</li>
+                                <li>• Familiar with: Java, C++</li>
+                            </ul>
+                        </li>
+                        <li><span>Database Management</span><br>
+                            <ul style="margin-left: 10px;">
+                                <li>• Experienced in: MySQL</li>
+                            </ul>
+                        </li>
+                        <li><span>Version Control System</span><br>
+                            <ul style="margin-left: 10px;">
+                                <li>• Familiar with: Git, GitHub</li>
+                            </ul>
+                        </li>
+                        <li><span>Content Management System</span><br>
+                            <ul style="margin-left: 10px;">
+                                <li>• Familiar with: WordPress</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                        <li><span>February, 2024 – May, 2024</span><br><b>Internship at Local Government in Antipolo City</b><br>Enhanced the "Web-Based Barangay Record Management System (BRMS)" for Barangay Mambugan. Participated in training sessions to improve skills in web development, programming, database management, troubleshooting, and hardware maintenance. Gained experience in streamlining administrative processes and organizational skills.<br><a href="#" class="modal-trigger" onclick="openFileModal('certificates/CertificateOfInternship.pdf', event)"><i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i> Certificate of Internship</a></li>
+                            <li><span>August, 2022 – December, 2023</span><br><b>Social Media Evaluator at TELUS International (Remote)</b><br>Played a vital role in improving Ad effectiveness on various social platforms, boosting user engagement and brand visibility. I evaluated and rated Ads, providing valuable insights to enhance their performance.<br><a href="#" class="modal-trigger" onclick="openFileModal('certificates/JuliusPascual_Certificate_SME.pdf', event)"><i class="fa-solid fa-arrow-up-right-from-square fa-xs"></i> Certificate of Employment</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li>
+                                <span>Tertiary</span><br>
+                                Bachelor's degree in Information Technology<br>
+                                Our Lady of Fatima University (OLFU) Antipolo Campus<br>
+                                2020 - 2024<br>                
+                            </li>
+                            <li>
+                                <span>Secondary</span><br>
+                                Senior High School<br>
+                                Mayamot National High School (MNHS)<br>
+                                2018 - 2020<br>
+                            </li>
+                            <li>
+                                Junior High School<br>
+                                Mayamot National High School (MNHS)<br>
+                                2014 - 2018<br>   
+                            </li>
+                            <li>
+                                <span>Primary</span><br>
+                                Pagrai Community Learning Center (PCLC)<br>
+                                2008 - 2014<br>   
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="certificates">
+                        <ul>
+                        <li><span>Technical Education and Skills Development Authority (TESDA)</span><br>
+                        • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/NCII_CSS_PASCUAL.pdf', event)">"National Certificate II in COMPUTER SYSTEMS SERVICING"</a><br>
+                        </li>
+                        <li><span>Department of Information and Communications Technology (DICT)</span><br>
+                        • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/JULIUS C. PASCUAL Certificate of Completion.pdf', event)">"Microsoft Office Specialist: Excel Associate"</a><br>
+                        • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/Pascual_Webinar_Cert-8_signed.pdf', event)">"Securing Web Applications"</a><br>
+                        </li>
+                        <li>
+                            <span>Cisco Networking Academy</span><br>
+                            • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/ccna-introduction-to-networks.pdf', event)">"CCNAv7: Introduction to Networks"</a><br>
+                            • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/ccna-switching-routing-and-wireless-essentials.pdf', event)">"CCNAv7: Switching, Routing, and Wireless Essentials"</a><br>
+                            <a href="https://www.credly.com/badges/2e00a0fb-3680-4b16-9561-9952829f23c1/public_url" target="_blank"><img src="image/netacad1.png" alt="" style="width: 80px; height: 80px; margin: 3px 3px 0 15px;"></a>
+                            <a href="https://www.credly.com/badges/203c79ab-2830-4220-b538-f86e2835d3c5/public_url" target="_blank"><img src="image/netacad2.png" alt="" style="width: 80px; height: 80px;"></a>
+                        </li>
+                        <li><span>Web-Based Seminars (Webinars)</span><br>
+                            • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/5.pdf', event)">"AI Marketing and Sentence Computer with PHP and Open AI GPT-3 for Beginners"</a><br>
+                            • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/2.pdf', event)">"Architecting Tomorrow: Exploring the Evolution of Modern Software Architecture"</a><br>
+                            • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/6.pdf', event)">"Empowering IT through Collaborative Learning: Unleash Innovation Together"</a><br>
+                            • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/Third Youth CoLab Webinar.pdf', event)">"Igniting Innovation: Building Bridges and Delivering Powerful Pitches"</a><br>
+                            • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/1.pdf', event)">"Beyond Boundaries: Exploring Immersive Learning with AR and VR"</a><br>
+                            • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/11.pdf', event)">"Synergizing Success: The Collaborative Learning Advantage"</a><br>
+                            • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/4.pdf', event)">"Untold Stories: Life Begins in your First Employment"</a><br>
+                            • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/10.pdf', event)">"IT Software Tools in Business Today"</a><br>
+                            • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/9.pdf', event)">"Online Data and Cybersecurity"</a><br>
+                            • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/3.pdf', event)">"Skills to Succeed Academy"</a><br>
+                            • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/7.pdf', event)">"Gamification in Education"</a><br>                       
+                            • <a href="#" class="modal-trigger" onclick="openFileModal('certificates/13.pdf', event)">"Social Media in Learning"</a><br> 
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- =================Services Section================= -->
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Development</h2>
+                <p>With a solid foundation in HTML, CSS, PHP, JavaScript, and Bootstrap, I offer web development services tailored to your needs. From designing responsive layouts to integrating APIs, I strive to create impactful online experiences.</p>
+            </div>
+            <div>
+                <i class="fa-brands fa-connectdevelop"></i>
+                <h2>Software Development</h2>
+                <p>Proficient in C, Python, and Java, I specialize in building robust software solutions that solve complex problems. From desktop to mobile applications, I aim to drive innovation and efficiency in dynamic IT environments.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <h2>App Development</h2>
+                <p>Experienced in iOS development with Objective-C and Android development with Java, I craft intuitive mobile applications that enhance user experiences. From concept to deployment, I am dedicated to delivering innovative solutions.</p>
+            </div>
+            <!--<div>
+                <i class="fa-solid fa-laptop"></i>
+                <h2>Responsive Design</h2>
+                <p>Utilizing my expertise in HTML, CSS, and Bootstrap, I create responsive designs that adapt seamlessly across various devices. Ensuring your website looks and functions flawlessly on desktops, tablets, and smartphones.</p>
+            </div>-->
+            <div>
+                <i class="fa-solid fa-database"></i>
+                <h2>Database Management</h2>
+                <p>Skilled in managing databases using MySQL and Oracle, I ensure efficient organization and retrieval of data to support your applications and business processes. From design to optimization, I prioritize data integrity and performance.</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-cogs"></i>
+                <h2>API Integration</h2>
+                <p>Capable of integrating various APIs into your applications for enhanced functionality. From communication to data exchange, I ensure seamless integration of SMS, email, and other APIs to provide advanced features and improve user experiences.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- =================Portfolio Section================= -->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Portfolio</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="image/BarangayMambugan.png">
+                <div class="layer">
+                    <h3>Web-Based Barangay Record Management System (BRMS)</h3>
+                    <p>A comprehensive system for Barangay Mambugan featuring document/certificate request and generation, SMS notification, ChatBot support service, Geolocation restriction for residents' sign-up, and 2FA using Google Authenticator for Admin access.</p>
+                    <a href="#" onclick="showMessage()"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="image/HJCStore.png">
+                <div class="layer">
+                    <h3>Web-Based Sales and Inventory Management System with Point of Sale (POS) and Barcode Scanner</h3>
+                    <p>A comprehensive system for HJC Store facilitating efficient sales, real-time inventory tracking, seamless point of sale transactions, barcode scanner integration, and the ability to generate reports for strategic decision-making.</p>
+                    <a href="#" onclick="showMessage()"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="image/ThotForTheDay.png">
+                <div class="layer">
+                    <h3>Thot For The Day: A Random Quote Generator App with Daily Notification</h3>
+                    <p>A mobile app that delivers a random inspirational quote daily, featuring a user-friendly interface and notifications to ensure users receive their daily dose of motivation. The app draws from a diverse collection of sayings, providing users with positivity and reflection to start their day on a high note.</p>
+                    <a href="#" onclick="showMessage()"><i class="fa-solid fa-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="seemore" onclick="showSeemore()">See more</a>
+    </div>
+</div>
+
+<script>
+function showMessage() {
+    alert("The website is not yet available for viewing.");
+    event.preventDefault();
+    }
+
+function showSeemore() {
+    alert("To be uploaded soon.");
+    event.preventDefault();
+    }
+</script>
+
+<!-- =================Contact Section================= -->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-inbox"></i> <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=pjulius001@gmail.com" target="_blank">pjulius001@gmail.com</a></p>
+                <p><i class="fa-brands fa-windows"></i> <a href="https://outlook.live.com/mail/compose?to=pjulius001@outlook.com" target="_blank">pjulius001@outlook.com</a></p>
+                <p><i class="fa-brands fa-apple"></i> <a href="https://www.icloud.com/#mail" target="_blank">&nbsppjulius001@icloud.com</a></p>
+                <p><i class="fa-solid fa-mobile-screen"></i> +63 919 738 8343</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/JProfessor" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://m.me/JProfessor" target="_blank"><i class="fa-brands fa-facebook-messenger"></i></a>
+                    <a href="https://rb.gy/61zepa" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/julius-pascual-911a11302" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/JProfessor016" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </div>
+                <div class="resume-buttons">
+                    <a href="certificates/Resume.pdf" download class="downloadcv"><i class="fa-solid fa-download"></i> Download Resume</a>
+                    <a href="https://juliuspascual.jobs180.com/" target="_blank" class="onlinecv"><i class="fa-solid fa-link"></i> Online Resume</a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="text" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="submitbtn"><i class="fa-solid fa-paper-plane"></i> Send</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2024 Julius Pascual. All rights reserved.</p>
+    </div>
+</div>
+</body>
+</html>
