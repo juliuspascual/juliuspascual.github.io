@@ -360,9 +360,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const part2 = "Julius";
     const part3 = "\nPascual"; // Insert newline character
     const typingSpeed = 200; // Speed of typing in milliseconds
+    const standbyTime = 10000; // Standby time before backspacing in milliseconds
+    const backspacingSpeed = 100; // Speed of backspacing in milliseconds
     const cursor = document.getElementById('cursor');
     const container = document.getElementById('typing-container');
     let index = 0;
+    let isTyping = true;
 
     function typeText() {
         if (index < part1.length) {
@@ -387,6 +390,40 @@ document.addEventListener("DOMContentLoaded", function() {
         index++;
         if (index < part1.length + part2.length + part3.length) {
             setTimeout(typeText, typingSpeed);
+        } else {
+            setTimeout(startBackspacing, standbyTime); // Start backspacing after standby time
+        }
+    }
+
+    function startBackspacing() {
+        isTyping = false;
+        backspaceText();
+    }
+
+    function backspaceText() {
+        if (index > 0) {
+            if (index <= part1.length) {
+                container.innerHTML = container.innerHTML.slice(0, -27); // Remove colored span tags
+            } else if (index <= part1.length + part2.length) {
+                if (index === part1.length + part2.length) {
+                    container.innerHTML = container.innerHTML.slice(0, -7); // Remove colored span end tag
+                }
+                container.innerHTML = container.innerHTML.slice(0, -1);
+                if (index === part1.length) {
+                    container.innerHTML = container.innerHTML.slice(0, -27); // Remove colored span start tag
+                }
+            } else if (index <= part1.length + part2.length + part3.length) {
+                if (part3.charAt(index - part1.length - part2.length - 1) === '\n') {
+                    container.innerHTML = container.innerHTML.slice(0, -4); // Remove <br> tag
+                } else {
+                    container.innerHTML = container.innerHTML.slice(0, -27); // Remove colored span tags
+                }
+            }
+            index--;
+            setTimeout(backspaceText, backspacingSpeed);
+        } else {
+            isTyping = true;
+            setTimeout(typeText, 1000); // Restart typing after 1 second delay
         }
     }
 
@@ -400,5 +437,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Start typing animation
     typeText();
 });
+
 
 
