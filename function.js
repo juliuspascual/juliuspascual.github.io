@@ -369,13 +369,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function typeText() {
         if (index < part1.length) {
-            container.innerHTML += '<span style="color: #fff;">' + part1.charAt(index) + '</span>';
+            container.innerHTML += '<span style="color: #fff;" class="part1">' + part1.charAt(index) + '</span>';
         } else if (index < part1.length + part2.length) {
             const part2Index = index - part1.length;
             if (part2Index === 0) {
-                container.innerHTML += '<span style="color: #ff004f;" id="part2">';
+                container.innerHTML += '<span style="color: #ff004f;" class="part2">';
             }
-            container.innerHTML += part2.charAt(part2Index);
+            container.querySelector('.part2').innerHTML += part2.charAt(part2Index);
             if (part2Index === part2.length - 1) {
                 container.innerHTML += '</span>';
             }
@@ -383,7 +383,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (part3.charAt(index - part1.length - part2.length) === '\n') {
                 container.innerHTML += '<br>';
             } else {
-                container.innerHTML += '<span style="color: #fff;">' + part3.charAt(index - part1.length - part2.length) + '</span>';
+                container.innerHTML += '<span style="color: #fff;" class="part3">' + part3.charAt(index - part1.length - part2.length) + '</span>';
             }
         }
 
@@ -402,20 +402,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function backspaceText() {
         if (index > 0) {
-            if (index <= part1.length) {
-                container.innerHTML = container.innerHTML.slice(0, -1);
-            } else if (index <= part1.length + part2.length) {
-                const part2Span = document.getElementById('part2');
-                part2Span.innerHTML = part2Span.innerHTML.slice(0, -1);
+            if (index > part1.length + part2.length) {
+                container.innerHTML = container.innerHTML.slice(0, -1); // Remove last character
+            } else if (index > part1.length) {
+                const part2Span = container.querySelector('.part2');
+                part2Span.innerHTML = part2Span.innerHTML.slice(0, -1); // Remove last character from part2 span
                 if (part2Span.innerHTML === '') {
-                    container.innerHTML = container.innerHTML.slice(0, -31); // Remove span tags
+                    part2Span.remove(); // Remove span if empty
                 }
-            } else if (index <= part1.length + part2.length + part3.length) {
-                if (part3.charAt(index - part1.length - part2.length - 1) === '\n') {
-                    container.innerHTML = container.innerHTML.slice(0, -4); // Remove <br> tag
-                } else {
-                    container.innerHTML = container.innerHTML.slice(0, -1);
-                }
+            } else {
+                container.innerHTML = container.innerHTML.slice(0, -1); // Remove last character
             }
             index--;
             setTimeout(backspaceText, backspacingSpeed);
@@ -435,6 +431,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Start typing animation
     typeText();
 });
+
 
 
 
