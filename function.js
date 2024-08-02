@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function backspaceText() {
         if (index > 0) {
             if (index <= part1.length) {
-                container.innerHTML = container.innerHTML.slice(0, -27); // Remove colored span tags
+                container.innerHTML = container.innerHTML.slice(0, -31); // Remove colored span tags
             } else if (index <= part1.length + part2.length) {
                 if (index === part1.length + part2.length) {
                     container.innerHTML = container.innerHTML.slice(0, -7); // Remove colored span end tag
@@ -416,7 +416,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (part3.charAt(index - part1.length - part2.length - 1) === '\n') {
                     container.innerHTML = container.innerHTML.slice(0, -4); // Remove <br> tag
                 } else {
-                    container.innerHTML = container.innerHTML.slice(0, -27); // Remove colored span tags
+                    container.innerHTML = container.innerHTML.slice(0, -31); // Remove colored span tags
                 }
             }
             index--;
